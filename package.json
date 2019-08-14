@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Bamazon is an application that allows users to chose a product to purchase, it allows the user to chose how many of an item and gives the user a shopping cart total",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kattymay/Bamazon.git"
+  },
+  "author": "Katherine Walters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kattymay/Bamazon/issues"
+  },
+  "homepage": "https://github.com/kattymay/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.5.1",
+    "mysql": "^2.17.1"
+  }
+}
