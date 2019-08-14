@@ -14,10 +14,10 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     if (err) throw err;
     //console.log("connected as id " + connection.threadId + "\n");
-    displyItems();
+    displayItems();
   });
 
-  function displyItems() {
+  function displayItems() {
     connection.query("SELECT * FROM products", function(err, res) {
       if (err) throw err;
         console.table(res);
@@ -28,11 +28,11 @@ connection.connect(function(err) {
 function customerOrder(){
     inquirer.prompt([{
         name: "item_id",
-        message: "Please enter the id of the item you would like to order.",
+        message: "Enter item ID",
         type: "input"
     },{
         name: "quantity",
-        message: "Please enter the quantity of the item you would like to order.",
+        message: "Enter wanted quantity of item",
         type: "input",
         validate: function(value) {
             if (isNaN(value) === false) {
@@ -54,8 +54,8 @@ connection.query("SELECT * FROM  products WHERE  item_id =" + itemId, function(e
     //console.log(itemQuantity);
 
     if(itemQuantity > selected.stock_quantity){
-        console.log("Sorry, there is not engouh items in a stock.");
-        displyItems();
+        console.log("Not enough in stock");
+        displayItems();
     }
     else{
         placeOrder(itemId, itemQuantity, selected.price);
@@ -71,7 +71,7 @@ function placeOrder(itemId, itemQuantity, price){
        if (err) throw err;
        //console.log(res);
 
-console.log("Congratulation! You just placed your order.");
+console.log("Your order has been placed.");
 console.log("The total cost of your purchase is $ " + (price * itemQuantity) +  ".");
 stillShopping();
   })
@@ -81,15 +81,15 @@ function stillShopping(){
     inquirer.prompt([
         {
             name: "shop",
-            message: "Whould you like to purchase more items?",
+            message: "Continue shopping?",
             type: "confirm"
         }
      ]).then(function(answer){
         if(answer.shop){
-        displyItems();
+        displayItems();
         }
      else{
-        console.log("Thank you for shopping with Bamazon! Have a nice day!")
+        console.log("Thank you for shopping!")
         exit();
     }
 })
