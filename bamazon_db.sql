@@ -15,33 +15,33 @@ PRIMARY KEY (item_id)
 SELECT * FROM products;
 USE bamazon_db;
 
-INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("shovel", gardening, 12, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("rake", gardening, 10, 50);
+VALUE ("rake", "gardening", 10.29, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("watering can", gardening, 7, 50);
+VALUE ("watering can", "gardening", 7.59, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("pack blackberry seeds", gardening, 3, 50);
+VALUE ("pack blackberry seeds", "gardening", 3.11, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("pack blueberry seeds", gardening, 3, 100);
+VALUE ("pack blueberry seeds", "gardening", 3.11, 100);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("pack strawberry seeds", gardening, 3, 50);
+VALUE ("pack strawberry seeds", "gardening", 3.11, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("planter's box", gardening, 18, 50);
+VALUE ("planter's box", "gardening", 12.29, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("potting mix", gardening, 24, 50);
+VALUE ("potting mix", "gardening", 22.29, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("fertilizer", gardening, 15, 50);
+VALUE ("fertilizer", "gardening", 15.59, 50);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUE ("bird bath", gardening, 24, 50);
+VALUE ("bird bath", "gardening", 24.29, 50);
 
+INSERT INTO products(product_name, department_name, price, stock_quantity)
+VALUE ("shovel", "gardening", 12.29, 50);

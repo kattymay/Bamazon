@@ -1,4 +1,4 @@
-// Dependencies
+// Dependencies, mysql & inquirer
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
@@ -30,7 +30,7 @@ function displayItems() {
   });
 }
 
-// Function customerOrder
+// Function to prompt customerOrder
 function customerOrder() {
   // Prompt user to input selected item and quantity
   inquirer.prompt([{
@@ -48,16 +48,16 @@ function customerOrder() {
       return false;
     }
   }])
-// If user has submitted choice, update table with answers
+// If user has submitted choice, match table with answers
     .then(function (answer) {
       var itemId = answer.item_id;
       var itemQuantity = answer.quantity;
 
-// Pull from sql table "products"
+// Pull from sql table "products" 
       connection.query("SELECT * FROM  products WHERE  item_id =" + itemId, function (err, res) {
         var selected = res[0];
   
-// If not enough of item, display alert
+// If not enough of item, display alert. Call displayItems
         if (itemQuantity > selected.stock_quantity) {
           console.log("Not enough in stock");
           displayItems();
