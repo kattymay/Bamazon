@@ -19,3 +19,6 @@ However, if the does have enough of the product, it will fulfill the customer's 
 
 This means updating the SQL database to reflect the remaining quantity.
 Once the update goes through, it will show the customer the total cost of their purchase.
+
+![Bamazon](/images/bamazon.png)
+Format: ![Alt Text](url)
